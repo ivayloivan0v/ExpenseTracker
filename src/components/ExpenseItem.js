@@ -1,17 +1,18 @@
+import { ExpenseDate } from "./ExpenseDate";
+import { Card } from "./Card";
 import "./ExpenseItem.css";
 
 export const ExpenseItem = (props) => {
-  const expenseDate = props.date
-  const expenseTitle = props.title
-  const expenseAmount = props.amount
+  const expenseTitle = props.title;
+  const expenseAmount = props.amount;
 
   return (
-    <div className="expense-item">
-      <div>{expenseDate.toDateString()}</div>
+    <Card className="expense-item">
+      <ExpenseDate date={props.date}/>
       <div className="expense-item__description">
         <h2>{expenseTitle}</h2>
         <div className="expense-item__price">${expenseAmount}</div>
       </div>
-    </div>
+    </Card>
   );
 };
